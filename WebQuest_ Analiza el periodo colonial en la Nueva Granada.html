@@ -1,0 +1,912 @@
+
+<!-- saved from url=(0118)file:///C:/Users/JOSE/Downloads/WebQuest_%20Analiza%20el%20periodo%20colonial%20en%20la%20Nueva%20Granada.html#unidad6 -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script>
+
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebQuest: Analiza el periodo colonial en la Nueva Granada</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            text-align: center;
+            background-color: #4682b4;
+            color: white;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #87ceeb;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #4682b4;
+        }
+        .tab1 { background-color: #ff6347; }
+        .tab2 { background-color: #32cd32; }
+        .tab3 { background-color: #1e90ff; }
+        .tab4 { background-color: #ff69b4; }
+        .tab5 { background-color: #ffd700; }
+        .tab6 { background-color: #6a5acd; }
+        section {
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4682b4;
+            border-bottom: 2px solid #87ceeb;
+            padding-bottom: 5px;
+        }
+        .highlight-box {
+            background-color: #e6f3ff;
+            border: 2px solid #4682b4;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #2f4f4f;
+        }
+        .icon {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        .quiz {
+            background-color: #f0fff0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .quiz label {
+            margin-right: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #4682b4;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #87ceeb;
+            color: white;
+        }
+        button {
+            background-color: #4682b4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #4169e1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WebQuest: Analiza el periodo colonial en la Nueva Granada</h1>
+            <p>Elaborado por: José Herney Gonzales</p>
+        </header>
+
+        <nav>
+            <a href="file:///C:/Users/JOSE/Downloads/WebQuest_%20Analiza%20el%20periodo%20colonial%20en%20la%20Nueva%20Granada.html#unidad1" class="tab1">Organizaciones Políticas</a>
+            <a href="file:///C:/Users/JOSE/Downloads/WebQuest_%20Analiza%20el%20periodo%20colonial%20en%20la%20Nueva%20Granada.html#unidad2" class="tab2">Trabajo en la Colonia</a>
+            <a href="file:///C:/Users/JOSE/Downloads/WebQuest_%20Analiza%20el%20periodo%20colonial%20en%20la%20Nueva%20Granada.html#unidad3" class="tab3">Grupos Sociales</a>
+            <a href="file:///C:/Users/JOSE/Downloads/WebQuest_%20Analiza%20el%20periodo%20colonial%20en%20la%20Nueva%20Granada.html#unidad4" class="tab4">Religión Católica</a>
+            <a href="file:///C:/Users/JOSE/Downloads/WebQuest_%20Analiza%20el%20periodo%20colonial%20en%20la%20Nueva%20Granada.html#unidad5" class="tab5">Evaluación Final</a>
+            <a href="file:///C:/Users/JOSE/Downloads/WebQuest_%20Analiza%20el%20periodo%20colonial%20en%20la%20Nueva%20Granada.html#unidad6" class="tab6">Recuperación</a>
+        </nav>
+
+        <!-- Unidad 1: Organizaciones Políticas -->
+        <section id="unidad1">
+            <h2>🗳️ Unidad 1: Organizaciones Políticas y Administrativas</h2>
+            <h3>Introducción</h3>
+            <p>Imagina que eres un detective del tiempo y viajas a la Nueva Granada, cuando los españoles gobernaban lo que hoy es Colombia. ¿Quiénes tomaban las decisiones importantes? ¿Cómo organizaban todo? En esta unidad, descubrirás las organizaciones políticas de la Colonia y las compararás con las de hoy, como si resolvieras un rompecabezas histórico.</p>
+
+            <h3>Objetivos de Aprendizaje</h3>
+            <ul>
+                <li>✏️ Conocer las organizaciones políticas de la Nueva Granada.</li>
+                <li>✅ Compararlas con las instituciones actuales de Colombia.</li>
+                <li>💡 Entender cómo funcionaban y su importancia.</li>
+            </ul>
+
+            <h3>Desarrollo</h3>
+            <p>En la Nueva Granada, los españoles crearon organizaciones para gobernar, administrar y controlar la Colonia. Vamos a conocerlas:</p>
+            <ul>
+                <li><strong>Consejo Supremo de Indias:</strong> Era como un grupo de consejeros en España que ayudaban al rey a tomar decisiones sobre las colonias. Hoy, sería como el Ministerio de Relaciones Exteriores, que maneja temas internacionales.</li>
+                <li><strong>Casa de Contratación de Sevilla:</strong> Controlaba el comercio y los barcos que llegaban de América. Es parecida a la DIAN (Dirección de Impuestos y Aduanas Nacionales), que regula los impuestos y el comercio en Colombia.</li>
+                <li><strong>Real Audiencia:</strong> Era un tribunal que resolvía conflictos y aseguraba que se cumplieran las leyes. Hoy, los tribunales de justicia hacen algo similar.</li>
+                <li><strong>Cabildos:</strong> Eran como los gobiernos locales, con personas que decidían sobre los pueblos. Hoy, los alcaldes y concejales tienen ese papel.</li>
+                <li><strong>Real Hacienda:</strong> Se encargaba de recaudar impuestos y manejar el dinero de la Colonia. Es como el Ministerio de Hacienda actual.</li>
+                <li><strong>Virreinato:</strong> Era la región más grande gobernada por un virrey, como un "superjefe". Hoy, los departamentos y gobernadores organizan regiones en Colombia.</li>
+            </ul>
+            <div class="highlight-box">
+                💡 <strong>Para tu cuaderno:</strong><br>
+                - Consejo Supremo de Indias → Ministerio de Relaciones Exteriores.<br>
+                - Casa de Contratación → DIAN.<br>
+                - Real Audiencia → Tribunales de justicia.<br>
+                - Cabildos → Alcaldías y concejos.<br>
+                - Real Hacienda → Ministerio de Hacienda.<br>
+                - Virreinato → Departamentos.
+            </div>
+            <img src="https://via.placeholder.com/400x200?text=Mapa+Nueva+Granada" alt="Mapa de la Nueva Granada">
+            <p>📺 <strong>Video educativo:</strong> Mira este video para entender cómo gobernaban los españoles: <a href="https://www.youtube.com/watch?v=example" target="_blank">La Colonia en América (3 min)</a>.</p>
+            <p><strong>Material de lectura:</strong> Imagina que vives en un pueblo de la Nueva Granada. El cabildo decide dónde construir una escuela, pero pide permiso a la Real Audiencia. Si hay un problema con los impuestos, la Real Hacienda lo resuelve. Todo lo importante se consulta con el Consejo Supremo de Indias en España.</p>
+
+            <h3>Tarea</h3>
+            <p>📢 Crea un póster que compare una organización colonial (tú eliges) con su equivalente actual. Incluye dibujos y 3 frases cortas explicando las similitudes.</p>
+            <p><strong>Criterios de éxito:</strong></p>
+            <ul>
+                <li>✅ El póster muestra la organización colonial y la actual.</li>
+                <li>✅ Tiene dibujos claros y coloridos.</li>
+                <li>✅ Las 3 frases son cortas y explican bien las similitudes.</li>
+            </ul>
+
+            <h3>Proceso</h3>
+            <ol>
+                <li>👥 En grupos de 3, elige una organización colonial.</li>
+                <li>✏️ Investiga en los recursos cómo funcionaba y su equivalente actual.</li>
+                <li>🎨 Dibuja en una cartulina las dos instituciones y escribe las 3 frases.</li>
+                <li>✅ Presenta tu póster al grupo y explica tu comparación.</li>
+            </ol>
+
+            <h3>Recursos</h3>
+            <ul>
+                <li><a href="https://www.banrepcultural.org/" target="_blank">Banco de la República (2023): Historia colonial</a></li>
+                <li><a href="https://www.youtube.com/watch?v=example" target="_blank">Video: La Colonia en América (2022)</a></li>
+                <li><a href="https://www.colombiaaprende.edu.co/" target="_blank">Colombia Aprende (2021): Instituciones coloniales</a></li>
+                <li><a href="https://www.mincultura.gov.co/" target="_blank">Ministerio de Cultura (2024): Nueva Granada</a></li>
+            </ul>
+
+            <h3>Evaluación Parcial</h3>
+            <div class="quiz">
+                <p><strong>1. Selección múltiple:</strong> En la Nueva Granada, el Consejo Supremo de Indias era un grupo de consejeros que ayudaba al rey a gobernar las colonias desde España. Decidía sobre leyes y problemas importantes. Hoy, el Ministerio de Relaciones Exteriores de Colombia maneja temas con otros países, como acuerdos o viajes. ¿Qué institución actual es más parecida al Consejo Supremo de Indias?</p>
+                <label><input type="radio" name="q1"> a) Ministerio de Hacienda</label>
+                <label><input type="radio" name="q1"> b) Ministerio de Relaciones Exteriores</label>
+                <label><input type="radio" name="q1"> c) DIAN</label>
+                <label><input type="radio" name="q1"> d) Alcaldías</label>
+                <p><strong>Respuesta:</strong> b) Ministerio de Relaciones Exteriores</p>
+
+                <p><strong>2. Selección múltiple:</strong> La Casa de Contratación de Sevilla controlaba el comercio entre España y las colonias. Revisaba los barcos, los productos y los impuestos. En Colombia, la DIAN se encarga de los impuestos y de controlar lo que entra y sale del país. ¿Qué institución actual es similar a la Casa de Contratación?</p>
+                <label><input type="radio" name="q2"> a) Tribunales de justicia</label>
+                <label><input type="radio" name="q2"> b) DIAN</label>
+                <label><input type="radio" name="q2"> c) Ministerio de Educación</label>
+                <label><input type="radio" name="q2"> d) Gobernaciones</label>
+                <p><strong>Respuesta:</strong> b) DIAN</p>
+
+                <p><strong>3. Selección múltiple:</strong> Los Cabildos eran grupos de personas que tomaban decisiones en los pueblos, como construir caminos o escuelas. Hoy, los alcaldes y concejales deciden cosas similares en los municipios. ¿Qué institución actual se parece a los Cabildos?</p>
+                <label><input type="radio" name="q3"> a) Alcaldías y concejos</label>
+                <label><input type="radio" name="q3"> b) Ministerio de Hacienda</label>
+                <label><input type="radio" name="q3"> c) Real Audiencia</label>
+                <label><input type="radio" name="q3"> d) Virreinato</label>
+                <p><strong>Respuesta:</strong> a) Alcaldías y concejos</p>
+
+                <p><strong>4. Selección múltiple:</strong> La Real Audiencia era un tribunal que resolvía conflictos entre las personas y aseguraba que se cumplieran las leyes del rey. Hoy, los tribunales de justicia en Colombia hacen lo mismo, resolviendo problemas legales. ¿Qué institución actual es como la Real Audiencia?</p>
+                <label><input type="radio" name="q4"> a) Tribunales de justicia</label>
+                <label><input type="radio" name="q4"> b) DIAN</label>
+                <label><input type="radio" name="q4"> c) Ministerio de Relaciones Exteriores</label>
+                <label><input type="radio" name="q4"> d) Cabildos</label>
+                <p><strong>Respuesta:</strong> a) Tribunales de justicia</p>
+
+                <p><strong>5. Selección múltiple:</strong> El Virreinato de la Nueva Granada era una gran región gobernada por un virrey, que tomaba decisiones importantes. Hoy, los departamentos de Colombia tienen gobernadores que organizan sus regiones. ¿Qué institución actual es parecida al Virreinato?</p>
+                <label><input type="radio" name="q5"> a) Alcaldías</label>
+                <label><input type="radio" name="q5"> b) Departamentos y gobernaciones</label>
+                <label><input type="radio" name="q5"> c) Ministerio de Hacienda</label>
+                <label><input type="radio" name="q5"> d) Real Hacienda</label>
+                <p><strong>Respuesta:</strong> b) Departamentos y gobernaciones</p>
+
+                <p><strong>6. Verdadero/Falso:</strong> La Real Hacienda recaudaba impuestos en la Colonia, como hace hoy el Ministerio de Hacienda. (Verdadero)</p>
+                <p><strong>7. Verdadero/Falso:</strong> Los Cabildos eran como el Ministerio de Relaciones Exteriores de hoy. (Falso)</p>
+                <p><strong>8. Verdadero/Falso:</strong> La Casa de Contratación controlaba el comercio, similar a la DIAN actual. (Verdadero)</p>
+
+                <p><strong>9. Arrastrar y soltar:</strong> Arrastra las instituciones coloniales a sus equivalentes actuales.</p>
+                <ul>
+                    <li>Consejo Supremo de Indias → Ministerio de Relaciones Exteriores</li>
+                    <li>Real Hacienda → Ministerio de Hacienda</li>
+                </ul>
+
+                <p><strong>10. Arrastrar y soltar:</strong> Arrastra las instituciones coloniales a sus equivalentes actuales.</p>
+                <ul>
+                    <li>Cabildos → Alcaldías y concejos</li>
+                    <li>Real Audiencia → Tribunales de justicia</li>
+                </ul>
+
+                <p><strong>11. Relacionar columnas:</strong> Une la institución colonial con su función.</p>
+                <table>
+                    <tbody><tr><td>Consejo Supremo de Indias</td><td>Controlaba el comercio</td></tr>
+                    <tr><td>Casa de Contratación</td><td>Asesoraba al rey</td></tr>
+                </tbody></table>
+                <p><strong>Respuesta:</strong> Consejo Supremo de Indias → Asesoraba al rey; Casa de Contratación → Controlaba el comercio.</p>
+
+                <p><strong>12. Relacionar columnas:</strong> Une la institución colonial con su equivalente actual.</p>
+                <table>
+                    <tbody><tr><td>Virreinato</td><td>Alcaldías</td></tr>
+                    <tr><td>Cabildos</td><td>Departamentos</td></tr>
+                </tbody></table>
+                <p><strong>Respuesta:</strong> Virreinato → Departamentos; Cabildos → Alcaldías.</p>
+            </div>
+
+            <h3>Rúbrica de Evaluación</h3>
+            <table>
+                <tbody><tr><th>Criterio</th><th>Superior (4)</th><th>Alto (3)</th><th>Básico (2)</th><th>Bajo (1)</th></tr>
+                <tr><td>Contextualización</td><td>Explica claramente el contexto histórico con ejemplos.</td><td>Explica el contexto con pocos ejemplos.</td><td>Menciona el contexto sin ejemplos.</td><td>No explica el contexto.</td></tr>
+                <tr><td>Precisión histórica</td><td>Compara correctamente las instituciones.</td><td>Compara con pequeños errores.</td><td>Compara con errores importantes.</td><td>No compara correctamente.</td></tr>
+                <tr><td>Colaboración</td><td>Trabaja en equipo y aporta ideas.</td><td>Trabaja en equipo con poca participación.</td><td>Participa poco en el equipo.</td><td>No colabora.</td></tr>
+                <tr><td>Diseño visual</td><td>Póster colorido, claro y organizado.</td><td>Póster claro pero poco colorido.</td><td>Póster desorganizado.</td><td>Póster incompleto o confuso.</td></tr>
+                <tr><td>Citación APA</td><td>Cita todas las fuentes correctamente.</td><td>Cita algunas fuentes correctamente.</td><td>Cita fuentes con errores.</td><td>No cita fuentes.</td></tr>
+            </tbody></table>
+        </section>
+
+        <!-- Unidad 2: Trabajo en la Colonia -->
+        <section id="unidad2">
+            <h2>⚒️ Unidad 2: Formas de Trabajo en la Colonia</h2>
+            <h3>Introducción</h3>
+            <p>¿Te imaginas trabajar todo el día sin que te paguen? En la Nueva Granada, muchas personas trabajaban en condiciones muy duras. En esta unidad, aprenderás cómo organizaban el trabajo en la Colonia y cómo ha cambiado hasta hoy.</p>
+
+            <h3>Objetivos de Aprendizaje</h3>
+            <ul>
+                <li>✏️ Conocer la encomienda, la mita y el resguardo.</li>
+                <li>✅ Comparar el trabajo colonial con el actual.</li>
+                <li>💡 Entender por qué eran injustos.</li>
+            </ul>
+
+            <h3>Desarrollo</h3>
+            <p>En la Colonia, el trabajo era muy diferente al de hoy. Los españoles organizaron el trabajo para aprovechar los recursos, pero muchos trabajadores sufrían. Conoce los sistemas:</p>
+            <ul>
+                <li><strong>Encomienda:</strong> Los españoles daban tierras con indígenas a un "encomendero". Él debía cuidarlos, pero a cambio los indígenas trabajaban gratis en haciendas o minas. Era como trabajar sin salario.</li>
+                <li><strong>Mita:</strong> Los indígenas debían trabajar por turnos en minas o cultivos, sin elección. Era un trabajo forzado, como si te obligaran a trabajar sin descanso.</li>
+                <li><strong>Resguardo:</strong> Daban tierras a comunidades indígenas para que vivieran y trabajaran juntos, pero bajo reglas españolas. Era una forma de controlarlos.</li>
+            </ul>
+            <p>Hoy, en Colombia, el trabajo es diferente. Hay leyes que protegen a los trabajadores, como el Ministerio de Trabajo, que asegura salarios justos y descansos. Aunque aún hay problemas, no es como en la Colonia.</p>
+            <div class="highlight-box">
+                💡 <strong>Para tu cuaderno:</strong><br>
+                - Encomienda: Trabajo forzado de indígenas en haciendas.<br>
+                - Mita: Trabajo obligatorio en minas o cultivos.<br>
+                - Resguardo: Tierras para indígenas, pero controladas.<br>
+                - Hoy: Leyes protegen a los trabajadores.
+            </div>
+            <img src="https://via.placeholder.com/400x200?text=Ind%C3%ADgenas+Trabajando" alt="Indígenas trabajando en la Colonia">
+            <p>📺 <strong>Video educativo:</strong> Mira este video sobre el trabajo en la Colonia: <a href="https://www.youtube.com/watch?v=example" target="_blank">El Trabajo en la Colonia (4 min)</a>.</p>
+            <p><strong>Material de lectura:</strong> Imagina que eres un indígena en una encomienda. Trabajas todo el día en una hacienda sin pago, y el encomendero no te da comida suficiente. En un resguardo, vives con tu comunidad, pero los españoles deciden qué cultivar. La mita te obliga a trabajar en una mina lejos de tu familia.</p>
+
+            <h3>Tarea</h3>
+            <p>📢 Escribe una carta imaginaria desde un indígena en la Colonia, contando cómo es su trabajo (encomienda, mita o resguardo). Luego, escribe 2 frases comparando con el trabajo actual.</p>
+            <p><strong>Criterios de éxito:</strong></p>
+            <ul>
+                <li>✅ La carta describe el trabajo colonial claramente.</li>
+                <li>✅ Menciona cómo se sentía el indígena.</li>
+                <li>✅ Las 2 frases comparan con el trabajo actual.</li>
+            </ul>
+
+            <h3>Proceso</h3>
+            <ol>
+                <li>👥 En parejas, elige un sistema de trabajo (encomienda, mita o resguardo).</li>
+                <li>✏️ Investiga en los recursos cómo era ese trabajo.</li>
+                <li>📝 Escribe la carta (máximo media página) y las 2 frases.</li>
+                <li>✅ Comparte tu carta con otra pareja y discute las diferencias.</li>
+            </ol>
+
+            <h3>Recursos</h3>
+            <ul>
+                <li><a href="https://www.banrepcultural.org/" target="_blank">Banco de la República (2023): Trabajo colonial</a></li>
+                <li><a href="https://www.youtube.com/watch?v=example" target="_blank">Video: Trabajo en la Colonia (2022)</a></li>
+                <li><a href="https://www.colombiaaprende.edu.co/" target="_blank">Colombia Aprende (2021): Encomienda y mita</a></li>
+                <li><a href="https://www.mincultura.gov.co/" target="_blank">Ministerio de Cultura (2024): Resguardos indígenas</a></li>
+            </ul>
+
+            <h3>Evaluación Parcial</h3>
+            <div class="quiz">
+                <p><strong>1. Selección múltiple:</strong> La encomienda era un sistema donde los indígenas trabajaban gratis para un encomendero, quien debía cuidarlos, pero muchos no lo hacían. Trabajaban en haciendas o minas sin salario. ¿Qué describe mejor la encomienda?</p>
+                <label><input type="radio" name="q1"> a) Trabajo forzado en haciendas</label>
+                <label><input type="radio" name="q1"> b) Trabajo voluntario en minas</label>
+                <label><input type="radio" name="q1"> c) Tierras libres para indígenas</label>
+                <label><input type="radio" name="q1"> d) Trabajo en oficinas</label>
+                <p><strong>Respuesta:</strong> a) Trabajo forzado en haciendas</p>
+
+                <p><strong>2. Selección múltiple:</strong> La mita obligaba a los indígenas a trabajar por turnos en minas o cultivos, sin poder elegir. Era un trabajo duro y forzado. ¿Qué describe la mita?</p>
+                <label><input type="radio" name="q2"> a) Trabajo voluntario en haciendas</label>
+                <label><input type="radio" name="q2"> b) Trabajo forzado en minas</label>
+                <label><input type="radio" name="q2"> c) Tierras para comunidades</label>
+                <label><input type="radio" name="q2"> d) Trabajo en escuelas</label>
+                <p><strong>Respuesta:</strong> b) Trabajo forzado en minas</p>
+
+                <p><strong>3. Selección múltiple:</strong> El resguardo daba tierras a los indígenas para vivir y trabajar, pero los españoles controlaban todo. Era una forma de organizarlos. ¿Qué era el resguardo?</p>
+                <label><input type="radio" name="q3"> a) Trabajo forzado en minas</label>
+                <label><input type="radio" name="q3"> b) Tierras controladas para indígenas</label>
+                <label><input type="radio" name="q3"> c) Trabajo voluntario</label>
+                <label><input type="radio" name="q3"> d) Comercio colonial</label>
+                <p><strong>Respuesta:</strong> b) Tierras controladas para indígenas</p>
+
+                <p><strong>4. Selección múltiple:</strong> Hoy, en Colombia, hay leyes que protegen a los trabajadores, como el Ministerio de Trabajo, que asegura salarios y descansos. ¿Cómo es el trabajo actual comparado con la Colonia?</p>
+                <label><input type="radio" name="q4"> a) Igual que en la Colonia</label>
+                <label><input type="radio" name="q4"> b) Más justo con leyes</label>
+                <label><input type="radio" name="q4"> c) Sin leyes</label>
+                <label><input type="radio" name="q4"> d) Solo forzado</label>
+                <p><strong>Respuesta:</strong> b) Más justo con leyes</p>
+
+                <p><strong>5. Selección múltiple:</strong> En la Colonia, el trabajo era injusto porque los indígenas no recibían salario ni podían elegir. Hoy, el Ministerio de Trabajo protege los derechos laborales. ¿Por qué era injusto el trabajo colonial?</p>
+                <label><input type="radio" name="q5"> a) Porque pagaban mucho</label>
+                <label><input type="radio" name="q5"> b) Porque era voluntario</label>
+                <label><input type="radio" name="q5"> c) Porque no había salario justo</label>
+                <label><input type="radio" name="q5"> d) Porque todos eran libres</label>
+                <p><strong>Respuesta:</strong> c) Porque no había salario justo</p>
+
+                <p><strong>6. Verdadero/Falso:</strong> La encomienda era un sistema de trabajo forzado. (Verdadero)</p>
+                <p><strong>7. Verdadero/Falso:</strong> La mita permitía a los indígenas elegir su trabajo. (Falso)</p>
+                <p><strong>8. Verdadero/Falso:</strong> El resguardo daba tierras a los indígenas, pero con control español. (Verdadero)</p>
+
+                <p><strong>9. Arrastrar y soltar:</strong> Arrastra el sistema de trabajo a su descripción.</p>
+                <ul>
+                    <li>Encomienda → Trabajo forzado en haciendas</li>
+                    <li>Mita → Trabajo obligatorio en minas</li>
+                </ul>
+
+                <p><strong>10. Arrastrar y soltar:</strong> Arrastra el sistema de trabajo a su descripción.</p>
+                <ul>
+                    <li>Resguardo → Tierras controladas para indígenas</li>
+                    <li>Encomienda → Trabajo sin salario</li>
+                </ul>
+
+                <p><strong>11. Relacionar columnas:</strong> Une el sistema de trabajo con su característica.</p>
+                <table>
+                    <tbody><tr><td>Encomienda</td><td>Tierras para indígenas</td></tr>
+                    <tr><td>Resguardo</td><td>Trabajo forzado</td></tr>
+                </tbody></table>
+                <p><strong>Respuesta:</strong> Encomienda → Trabajo forzado; Resguardo → Tierras para indígenas.</p>
+
+                <p><strong>12. Relacionar columnas:</strong> Une el sistema con su comparación actual.</p>
+                <table>
+                    <tbody><tr><td>Mita</td><td>Leyes laborales</td></tr>
+                    <tr><td>Encomienda</td><td>Trabajo forzado</td></tr>
+                </tbody></table>
+                <p><strong>Respuesta:</strong> Mita → Trabajo forzado; Encomienda → Trabajo forzado.</p>
+            </div>
+
+            <h3>Rúbrica de Evaluación</h3>
+            <table>
+                <tbody><tr><th>Criterio</th><th>Superior (4)</th><th>Alto (3)</th><th>Básico (2)</th><th>Bajo (1)</th></tr>
+                <tr><td>Contextualización</td><td>Describe el trabajo colonial con ejemplos claros.</td><td>Describe con pocos ejemplos.</td><td>Menciona el trabajo sin ejemplos.</td><td>No describe el trabajo.</td></tr>
+                <tr><td>Precisión histórica</td><td>Explica correctamente el sistema y su comparación.</td><td>Explica con pequeños errores.</td><td>Explica con errores importantes.</td><td>No explica correctamente.</td></tr>
+                <tr><td>Colaboración</td><td>Trabaja en pareja y aporta ideas.</td><td>Trabaja con poca participación.</td><td>Participa poco.</td><td>No colabora.</td></tr>
+                <tr><td>Diseño visual</td><td>Carta clara y bien redactada.</td><td>Carta clara pero con errores.</td><td>Carta desorganizada.</td><td>Carta incompleta.</td></tr>
+                <tr><td>Citación APA</td><td>Cita todas las fuentes correctamente.</td><td>Cita algunas fuentes correctamente.</td><td>Cita con errores.</td><td>No cita fuentes.</td></tr>
+            </tbody></table>
+        </section>
+
+        <!-- Unidad 3: Grupos Sociales -->
+        <section id="unidad3">
+            <h2>👥 Unidad 3: Grupos Sociales en la Nueva Granada</h2>
+            <h3>Introducción</h3>
+            <p>¿Alguna vez has notado que en un equipo de fútbol hay roles diferentes? En la Nueva Granada, la sociedad estaba dividida en grupos con roles distintos, pero no siempre justos. En esta unidad, descubrirás quiénes eran y cómo afectaron a Colombia hoy.</p>
+
+            <h3>Objetivos de Aprendizaje</h3>
+            <ul>
+                <li>✏️ Conocer los grupos sociales de la Nueva Granada.</li>
+                <li>✅ Explicar sus diferencias y su impacto actual.</li>
+                <li>💡 Entender la estratificación social colonial.</li>
+            </ul>
+
+            <h3>Desarrollo</h3>
+            <p>En la Nueva Granada, la sociedad estaba dividida en grupos según su origen y riqueza. Esto se llama <strong>estratificación social</strong>. Conoce los grupos:</p>
+            <ul>
+                <li><strong>Españoles:</strong> Venían de España y tenían el mayor poder. Eran los jefes del gobierno, la iglesia y la economía.</li>
+                <li><strong>Criollos:</strong> Nacían en América, pero de padres españoles. Tenían riqueza, pero menos poder que los españoles.</li>
+                <li><strong>Mestizos:</strong> Eran hijos de españoles e indígenas. Tenían menos derechos, pero algunos trabajaban en la agricultura.</li>
+                <li><strong>Indígenas:</strong> Eran los pueblos originarios. Trabajaban en condiciones duras y tenían pocos derechos.</li>
+                <li><strong>Esclavos africanos:</strong> Traídos de África, trabajaban sin libertad en plantaciones o casas.</li>
+            </ul>
+            <p>Esta división creó desigualdades que aún se ven hoy en Colombia, como diferencias en acceso a educación o trabajo. Aunque ahora hay más igualdad, el pasado dejó huellas.</p>
+            <div class="highlight-box">
+                💡 <strong>Para tu cuaderno:</strong><br>
+                - Españoles: Máximo poder, venían de España.<br>
+                - Criollos: Ricos, pero menos poder.<br>
+                - Mestizos: Menos derechos, mezcla de orígenes.<br>
+                - Indígenas: Explotados, pocos derechos.<br>
+                - Esclavos: Sin libertad, trabajo forzado.
+            </div>
+            <img src="https://via.placeholder.com/400x200?text=Grupos+Sociales" alt="Grupos sociales coloniales">
+            <p>📺 <strong>Video educativo:</strong> Mira este video sobre la sociedad colonial: <a href="https://www.youtube.com/watch?v=example" target="_blank">La Sociedad en la Colonia (3 min)</a>.</p>
+            <p><strong>Material de lectura:</strong> Imagina que eres un mestizo en la Nueva Granada. Tus padres son un español y una indígena. Trabajas en una hacienda, pero no tienes los mismos derechos que un criollo. Los indígenas trabajan más duro, y los esclavos no tienen libertad. Los españoles siempre mandan.</p>
+
+            <h3>Tarea</h3>
+            <p>📢 Crea una tabla comparativa en una hoja, con los 5 grupos sociales, sus roles y cómo influyen en la desigualdad actual (1 frase por grupo).</p>
+            <p><strong>Criterios de éxito:</strong></p>
+            <ul>
+                <li>✅ La tabla incluye los 5 grupos y sus roles.</li>
+                <li>✅ Cada grupo tiene 1 frase sobre su impacto actual.</li>
+                <li>✅ La tabla es clara y organizada.</li>
+            </ul>
+
+            <h3>Proceso</h3>
+            <ol>
+                <li>👥 En grupos de 3, divide los 5 grupos sociales.</li>
+                <li>✏️ Investiga en los recursos sus roles y su impacto.</li>
+                <li>📝 Dibuja la tabla y escribe la información.</li>
+                <li>✅ Comparte tu tabla con el grupo y discute las desigualdades.</li>
+            </ol>
+
+            <h3>Recursos</h3>
+            <ul>
+                <li><a href="https://www.banrepcultural.org/" target="_blank">Banco de la República (2023): Sociedad colonial</a></li>
+                <li><a href="https://www.youtube.com/watch?v=example" target="_blank">Video: Sociedad en la Colonia (2022)</a></li>
+                <li><a href="https://www.colombiaaprende.edu.co/" target="_blank">Colombia Aprende (2021): Grupos sociales</a></li>
+                <li><a href="https://www.mincultura.gov.co/" target="_blank">Ministerio de Cultura (2024): Estratificación social</a></li>
+            </ul>
+
+            <h3>Evaluación Parcial</h3>
+            <div class="quiz">
+                <p><strong>1. Selección múltiple:</strong> Los españoles en la Nueva Granada venían de España y tenían el mayor poder. Controlaban el gobierno y la iglesia. ¿Cuál era su posición social?</p>
+                <label><input type="radio" name="q1"> a) Los más pobres</label>
+                <label><input type="radio" name="q1"> b) Los más poderosos</label>
+                <label><input type="radio" name="q1"> c) Trabajadores manuales</label>
+                <label><input type="radio" name="q1"> d) Líderes indígenas</label>
+                <p><strong>Respuesta:</strong> b) Los más poderosos</p>
+
+                <p><strong>2. Selección múltiple:</strong> Los criollos eran hijos de españoles nacidos en América. Tenían riqueza, pero menos poder que los españoles. ¿Cuál era su posición?</p>
+                <label><input type="radio" name="q2"> a) Los más pobres</label>
+                <label><input type="radio" name="q2"> b) Ricos con menos poder</label>
+                <label><input type="radio" name="q2"> c) Esclavos</label>
+                <label><input type="radio" name="q2"> d) Líderes políticos</label>
+                <p><strong>Respuesta:</strong> b) Ricos con menos poder</p>
+
+                <p><strong>3. Selección múltiple:</strong> Los mestizos eran hijos de españoles e indígenas. Tenían menos derechos, pero algunos trabajaban en haciendas. ¿Cuál era su posición?</p>
+                <label><input type="radio" name="q3"> a) Los más poderosos</label>
+                <label><input type="radio" name="q3"> b) Menos derechos, trabajadores</label>
+                <label><input type="radio" name="q3"> c) Esclavos</label>
+                <label><input type="radio" name="q3"> d) Líderes políticos</label>
+                <p><strong>Respuesta:</strong> b) Menos derechos, trabajadores</p>
+
+                <p><strong>4. Selección múltiple:</strong> Los indígenas eran los pueblos originarios, pero trabajaban en condiciones duras con pocos derechos. ¿Cuál era su posición?</p>
+                <label><input type="radio" name="q4"> a) Los más poderosos</label>
+                <label><input type="radio" name="q4"> b) Explotados, pocos derechos</label>
+                <label><input type="radio" name="q4"> c) Líderes políticos</label>
+                <label><input type="radio" name="q4"> d) Ricos</label>
+                <p><strong>Respuesta:</strong> b) Explotados, pocos derechos</p>
+
+                <p><strong>5. Selección múltiple:</strong> Los esclavos africanos eran traídos sin libertad y trabajaban en plantaciones. ¿Cuál era su posición?</p>
+                <label><input type="radio" name="q5"> a) Los más poderosos</label>
+                <label><input type="radio" name="q5"> b) Sin libertad, trabajo forzado</label>
+                <label><input type="radio" name="q5"> c) Líderes políticos</label>
+                <label><input type="radio" name="q5"> d) Ricos</label>
+                <p><strong>Respuesta:</strong> b) Sin libertad, trabajo forzado</p>
+
+                <p><strong>6. Verdadero/Falso:</strong> Los criollos tenían más poder que los españoles. (Falso)</p>
+                <p><strong>7. Verdadero/Falso:</strong> Los indígenas tenían pocos derechos en la Colonia. (Verdadero)</p>
+                <p><strong>8. Verdadero/Falso:</strong> La estratificación social creó desigualdades. (Verdadero)</p>
+
+                <p><strong>9. Arrastrar y soltar:</strong> Arrastra el grupo social a su descripción.</p>
+                <ul>
+                    <li>Españoles → Máximo poder</li>
+                    <li>Criollos → Ricos con menos poder</li>
+                </ul>
+
+                <p><strong>10. Arrastrar y soltar:</strong> Arrastra el grupo social a su descripción.</p>
+                <ul>
+                    <li>Indígenas → Explotados</li>
+                    <li>Esclavos → Sin libertad</li>
+                </ul>
+
+                <p><strong>11. Relacionar columnas:</strong> Une el grupo social con su rol.</p>
+                <table>
+                    <tbody><tr><td>Españoles</td><td>Trabajo forzado</td></tr>
+                    <tr><td>Esclavos</td><td>Máximo poder</td></tr>
+                </tbody></table>
+                <p><strong>Respuesta:</strong> Españoles → Máximo poder; Esclavos → Trabajo forzado.</p>
+
+                <p><strong>12. Relacionar columnas:</strong> Une el grupo social con su impacto actual.</p>
+                <table>
+                    <tbody><tr><td>Indígenas</td><td>Desigualdad en educación</td></tr>
+                    <tr><td>Criollos</td><td>Menos derechos</td></tr>
+                </tbody></table>
+                <p><strong>Respuesta:</strong> Indígenas → Desigualdad en educación; Criollos → Menos derechos.</p>
+            </div>
+
+            <h3>Rúbrica de Evaluación</h3>
+            <table>
+                <tbody><tr><th>Criterio</th><th>Superior (4)</th><th>Alto (3)</th><th>Básico (2)</th><th>Bajo (1)</th></tr>
+                <tr><td>Contextualización</td><td>Explica los grupos con ejemplos claros.</td><td>Explica con pocos ejemplos.</td><td>Menciona los grupos sin ejemplos.</td><td>No explica los grupos.</td></tr>
+                <tr><td>Precisión histórica</td><td>Describe correctamente los roles e impacto.</td><td>Describe con pequeños errores.</td><td>Describe con errores importantes.</td><td>No describe correctamente.</td></tr>
+                <tr><td>Colaboración</td><td>Trabaja en equipo y aporta ideas.</td><td>Trabaja con poca participación.</td><td>Participa poco.</td><td>No colabora.</td></tr>
+                <tr><td>Diseño visual</td><td>Tabla clara y organizada.</td><td>Tabla clara pero con errores.</td><td>Tabla desorganizada.</td><td>Tabla incompleta.</td></tr>
+                <tr><td>Citación APA</td><td>Cita todas las fuentes correctamente.</td><td>Cita algunas fuentes correctamente.</td><td>Cita con errores.</td><td>No cita fuentes.</td></tr>
+            </tbody></table>
+        </section>
+
+        <!-- Unidad 4: Religión Católica -->
+        <section id="unidad4">
+            <h2>⛪ Unidad 4: La Religión Católica en la Colonia</h2>
+            <h3>Introducción</h3>
+            <p>¿Has ido a una iglesia o celebrado una fiesta religiosa? En la Nueva Granada, la religión católica era muy importante, pero no todos la vivían igual. En esta unidad, explorarás cómo influyó en la vida diaria y afectó a los indígenas y afrodescendientes.</p>
+
+            <h3>Objetivos de Aprendizaje</h3>
+            <ul>
+                <li>✏️ Conocer el papel de la religión católica en la Colonia.</li>
+                <li>✅ Entender su impacto en indígenas y afrodescendientes.</li>
+                <li>💡 Comparar las festividades coloniales con las actuales.</li>
+            </ul>
+
+            <h3>Desarrollo</h3>
+            <p>La <strong>religión católica</strong> era la religión oficial en la Nueva Granada, traída por los españoles. La Iglesia controlaba muchas cosas, como:</p>
+            <ul>
+                <li><strong>Evangelización:</strong> Los misioneros enseñaban el cristianismo a los indígenas, pero a veces destruían sus creencias y tradiciones, causando tristeza.</li>
+                <li><strong>Control social:</strong> La Iglesia decidía qué estaba bien o mal. La Inquisición castigaba a quienes no seguían las reglas católicas.</li>
+                <li><strong>Esclavitud:</strong> La Iglesia convirtió a los africanos al cristianismo, pero también justificó la esclavitud, lo que fue injusto.</li>
+                <li><strong>Festividades:</strong> Había fiestas religiosas como la Semana Santa, donde todos participaban, pero los indígenas y afrodescendientes a veces mezclaban sus tradiciones.</li>
+            </ul>
+            <p>Hoy, la religión católica sigue siendo importante en Colombia, pero hay más libertad para otras creencias. Las fiestas como Navidad aún unen a las comunidades.</p>
+            <div class="highlight-box">
+                💡 <strong>Para tu cuaderno:</strong><br>
+                - Religión católica: Oficial, controlaba la vida diaria.<br>
+                - Evangelización: Cambió las creencias indígenas.<br>
+                - Inquisición: Castigaba a los que no obedecían.<br>
+                - Festividades: Unían, pero con desigualdades.
+            </div>
+            <img src="https://via.placeholder.com/400x200?text=Iglesia+Colonial" alt="Iglesia colonial">
+            <p>📺 <strong>Video educativo:</strong> Mira este video sobre la religión en la Colonia: <a href="https://www.youtube.com/watch?v=example" target="_blank">La Iglesia en la Colonia (4 min)</a>.</p>
+            <p><strong>Material de lectura:</strong> Imagina que eres un indígena en una misión. Los misioneros te enseñan sobre Jesús, pero no puedes practicar tus rituales. En una fiesta católica, bailas con tu comunidad, pero los españoles te miran diferente. Los africanos cantan en la iglesia, pero no son libres.</p>
+
+            <h3>Tarea</h3>
+            <p>📢 Crea un dibujo de una festividad religiosa colonial, mostrando cómo participaban indígenas y afrodescendientes. Escribe 2 frases comparando con una fiesta actual.</p>
+            <p><strong>Criterios de éxito:</strong></p>
+            <ul>
+                <li>✅ El dibujo muestra la festividad y los grupos.</li>
+                <li>✅ Es colorido y claro.</li>
+                <li>✅ Las 2 frases comparan con una fiesta actual.</li>
+            </ul>
+
+            <h3>Proceso</h3>
+            <ol>
+                <li>👥 En parejas, elige una festividad colonial (ej. Semana Santa).</li>
+                <li>✏️ Investiga en los recursos cómo era y quiénes participaban.</li>
+                <li>🎨 Dibuja la festividad y escribe las 2 frases.</li>
+                <li>✅ Comparte tu dibujo con otra pareja y discute las diferencias.</li>
+            </ol>
+
+            <h3>Recursos</h3>
+            <ul>
+                <li><a href="https://www.banrepcultural.org/" target="_blank">Banco de la República (2023): Religión colonial</a></li>
+                <li><a href="https://www.youtube.com/watch?v=example" target="_blank">Video: Iglesia en la Colonia (2022)</a></li>
+                <li><a href="https://www.colombiaaprende.edu.co/" target="_blank">Colombia Aprende (2021): Inquisición</a></li>
+                <li><a href="https://www.mincultura.gov.co/" target="_blank">Ministerio de Cultura (2024): Festividades coloniales</a></li>
+            </ul>
+
+            <h3>Evaluación Parcial</h3>
+            <div class="quiz">
+                <p><strong>1. Selección múltiple:</strong> La religión católica era la oficial en la Nueva Granada y controlaba la vida diaria. La Iglesia organizaba fiestas y evangelizaba. ¿Cuál era la principal religión colonial?</p>
+                <label><input type="radio" name="q1"> a) Islam</label>
+                <label><input type="radio" name="q1"> b) Catolicismo</label>
+                <label><input type="radio" name="q1"> c) Judaísmo</label>
+                <label><input type="radio" name="q1"> d) Budismo</label>
+                <p><strong>Respuesta:</strong> b) Catolicismo</p>
+
+                <p><strong>2. Selección múltiple:</strong> La Iglesia Católica tenía poder sobre la vida de las personas, organizando misiones y castigando con la Inquisición. ¿Qué institución religiosa tenía más poder?</p>
+                <label><input type="radio" name="q2"> a) Los jesuitas</label>
+                <label><input type="radio" name="q2"> b) La Iglesia Católica</label>
+                <label><input type="radio" name="q2"> c) Los franciscanos</label>
+                <label><input type="radio" name="q2"> d) Los dominicos</label>
+                <p><strong>Respuesta:</strong> b) La Iglesia Católica</p>
+
+                <p><strong>3. Selección múltiple:</strong> La religión católica era parte de la vida diaria, con fiestas y misas. Afectaba a todos, pero no igual. ¿Qué papel tenía en la vida cotidiana?</p>
+                <label><input type="radio" name="q3"> a) No tenía papel</label>
+                <label><input type="radio" name="q3"> b) Solo los domingos</label>
+                <label><input type="radio" name="q3"> c) Parte fundamental</label>
+                <label><input type="radio" name="q3"> d) Solo para ricos</label>
+                <p><strong>Respuesta:</strong> c) Parte fundamental</p>
+
+                <p><strong>4. Selección múltiple:</strong> La evangelización buscaba convertir a los indígenas al cristianismo, pero a veces destruía sus creencias. ¿Cuál era su objetivo principal?</p>
+                <label><input type="radio" name="q4"> a) Proteger a los indígenas</label>
+                <label><input type="radio" name="q4"> b) Propagar el cristianismo</label>
+                <label><input type="radio" name="q4"> c) Enseñar agricultura</label>
+                <label><input type="radio" name="q4"> d) Liberar esclavos</label>
+                <p><strong>Respuesta:</strong> b) Propagar el cristianismo</p>
+
+                <p><strong>5. Selección múltiple:</strong> La Inquisición castigaba a quienes no seguían las reglas católicas, generando miedo. ¿Cuál era su objetivo principal?</p>
+                <label><input type="radio" name="q5"> a) Promover la libertad</label>
+                <label><input type="radio" name="q5"> b) Mantener la ortodoxia religiosa</label>
+                <label><input type="radio" name="q5"> c) Enseñar a los indígenas</label>
+                <label><input type="radio" name="q5"> d) Proteger a los esclavos</label>
+                <p><strong>Respuesta:</strong> b) Mantener la ortodoxia religiosa</p>
+
+                <p><strong>6. Verdadero/Falso:</strong> La religión católica era la oficial en la Colonia. (Verdadero)</p>
+                <p><strong>7. Verdadero/Falso:</strong> La Inquisición promovía la libertad religiosa. (Falso)</p>
+                <p><strong>8. Verdadero/Falso:</strong> Las fiestas religiosas incluían a indígenas y afrodescendientes. (Verdadero)</p>
+
+                <p><strong>9. Arrastrar y soltar:</strong> Arrastra el concepto a su descripción.</p>
+                <ul>
+                    <li>Evangelización → Convertir al cristianismo</li>
+                    <li>Inquisición → Castigar herejías</li>
+                </ul>
+
+                <p><strong>10. Arrastrar y soltar:</strong> Arrastra el concepto a su descripción.</p>
+                <ul>
+                    <li>Festividades → Fiestas religiosas</li>
+                    <li>Iglesia → Control social</li>
+                </ul>
+
+                <p><strong>11. Relacionar columnas:</strong> Une el concepto con su impacto.</p>
+                <table>
+                    <tbody><tr><td>Evangelización</td><td>Castigaba herejías</td></tr>
+                    <tr><td>Inquisición</td><td>Cambió creencias indígenas</td></tr>
+                </tbody></table>
+                <p><strong>Respuesta:</strong> Evangelización → Cambió creencias indígenas; Inquisición → Castigaba herejías.</p>
+
+                <p><strong>12. Relacionar columnas:</strong> Une el concepto con su comparación actual.</p>
+                <table>
+                    <tbody><tr><td>Festividades</td><td>Libertad religiosa</td></tr>
+                    <tr><td>Iglesia</td><td>Fiestas como Navidad</td></tr>
+                </tbody></table>
+                <p><strong>Respuesta:</strong> Festividades → Fiestas como Navidad; Iglesia → Libertad religiosa.</p>
+            </div>
+
+            <h3>Rúbrica de Evaluación</h3>
+            <table>
+                <tbody><tr><th>Criterio</th><th>Superior (4)</th><th>Alto (3)</th><th>Básico (2)</th><th>Bajo (1)</th></tr>
+                <tr><td>Contextualización</td><td>Explica la religión con ejemplos claros.</td><td>Explica con pocos ejemplos.</td><td>Menciona la religión sin ejemplos.</td><td>No explica la religión.</td></tr>
+                <tr><td>Precisión histórica</td><td>Describe correctamente el impacto.</td><td>Describe con pequeños errores.</td><td>Describe con errores importantes.</td><td>No describe correctamente.</td></tr>
+                <tr><td>Colaboración</td><td>Trabaja en pareja y aporta ideas.</td><td>Trabaja con poca participación.</td><td>Participa poco.</td><td>No colabora.</td></tr>
+                <tr><td>Diseño visual</td><td>Dibujo claro y colorido.</td><td>Dibujo claro pero con errores.</td><td>Dibujo desorganizado.</td><td>Dibujo incompleto.</td></tr>
+                <tr><td>Citación APA</td><td>Cita todas las fuentes correctamente.</td><td>Cita algunas fuentes correctamente.</td><td>Cita con errores.</td><td>No cita fuentes.</td></tr>
+            </tbody></table>
+        </section>
+
+        <!-- Unidad 5: Evaluación Final -->
+        <section id="unidad5">
+            <h2>📊 Unidad 5: Evaluación Final</h2>
+            <h3>Quiz Interactivo</h3>
+            <p>¡Es hora de mostrar lo que aprendiste! Responde este quiz con 20 preguntas sobre todas las unidades. Cada pregunta tiene un texto para ayudarte.</p>
+            <div class="quiz">
+                <p><strong>1. Selección múltiple:</strong> El Consejo Supremo de Indias ayudaba al rey a gobernar las colonias desde España. Hoy, el Ministerio de Relaciones Exteriores maneja temas internacionales. ¿Qué institución es similar? (Unidad 1)</p>
+                <label><input type="radio" name="q1"> a) Ministerio de Hacienda</label>
+                <label><input type="radio" name="q1"> b) Ministerio de Relaciones Exteriores</label>
+                <label><input type="radio" name="q1"> c) DIAN</label>
+                <label><input type="radio" name="q1"> d) Alcaldías</label>
+                <p><strong>Respuesta:</strong> b) Ministerio de Relaciones Exteriores</p>
+
+                <p><strong>2. Selección múltiple:</strong> La encomienda obligaba a los indígenas a trabajar gratis en haciendas. Hoy, hay leyes que protegen a los trabajadores. ¿Qué describe la encomienda? (Unidad 2)</p>
+                <label><input type="radio" name="q2"> a) Trabajo forzado</label>
+                <label><input type="radio" name="q2"> b) Trabajo voluntario</label>
+                <label><input type="radio" name="q2"> c) Tierras libres</label>
+                <label><input type="radio" name="q2"> d) Comercio</label>
+                <p><strong>Respuesta:</strong> a) Trabajo forzado</p>
+
+                <p><strong>3. Selección múltiple:</strong> Los criollos eran ricos, pero tenían menos poder que los españoles. ¿Cuál era su posición? (Unidad 3)</p>
+                <label><input type="radio" name="q3"> a) Los más pobres</label>
+                <label><input type="radio" name="q3"> b) Ricos con menos poder</label>
+                <label><input type="radio" name="q3"> c) Esclavos</label>
+                <label><input type="radio" name="q3"> d) Líderes políticos</label>
+                <p><strong>Respuesta:</strong> b) Ricos con menos poder</p>
+
+                <p><strong>4. Selección múltiple:</strong> La religión católica era la oficial y controlaba la vida diaria. ¿Cuál era la principal religión? (Unidad 4)</p>
+                <label><input type="radio" name="q4"> a) Islam</label>
+                <label><input type="radio" name="q4"> b) Catolicismo</label>
+                <label><input type="radio" name="q4"> c) Judaísmo</label>
+                <label><input type="radio" name="q4"> d) Budismo</label>
+                <p><strong>Respuesta:</strong> b) Catolicismo</p>
+
+                <p><strong>5. Selección múltiple:</strong> La Real Audiencia resolvía conflictos legales, como los tribunales de hoy. ¿Qué institución es similar? (Unidad 1)</p>
+                <label><input type="radio" name="q5"> a) Tribunales de justicia</label>
+                <label><input type="radio" name="q5"> b) DIAN</label>
+                <label><input type="radio" name="q5"> c) Ministerio de Educación</label>
+                <label><input type="radio" name="q5"> d) Cabildos</label>
+                <p><strong>Respuesta:</strong> a) Tribunales de justicia</p>
+
+                <p><strong>6. Verdadero/Falso:</strong> La mita era un trabajo forzado en minas. (Verdadero) (Unidad 2)</p>
+                <p><strong>7. Verdadero/Falso:</strong> Los españoles tenían menos poder que los criollos. (Falso) (Unidad 3)</p>
+                <p><strong>8. Verdadero/Falso:</strong> La Inquisición castigaba a quienes no seguían las reglas católicas. (Verdadero) (Unidad 4)</p>
+
+                <p><strong>9. Arrastrar y soltar:</strong> Arrastra la institución a su equivalente actual. (Unidad 1)</p>
+                <ul>
+                    <li>Cabildos → Alcaldías y concejos</li>
+                    <li>Real Hacienda → Ministerio de Hacienda</li>
+                </ul>
+
+                <p><strong>10. Arrastrar y soltar:</strong> Arrastra el grupo social a su descripción. (Unidad 3)</p>
+                <ul>
+                    <li>Indígenas → Explotados</li>
+                    <li>Esclavos → Sin libertad</li>
+                </ul>
+
+                <p><strong>11. Relacionar columnas:</strong> Une la institución con su función. (Unidad 1)</p>
+                <table>
+                    <tbody><tr><td>Consejo Supremo</td><td>Controlaba el comercio</td></tr>
+                    <tr><td>Casa de Contratación</td><td>Asesoraba al rey</td></tr>
+                </tbody></table>
+                <p><strong>Respuesta:</strong> Consejo Supremo → Asesoraba al rey; Casa de Contratación → Controlaba el comercio.</p>
+
+                <p><strong>12. Relacionar columnas:</strong> Une el sistema de trabajo con su descripción. (Unidad 2)</p>
+                <table>
+                    <tbody><tr><td>Encomienda</td><td>Tierras controladas</td></tr>
+                    <tr><td>Resguardo</td><td>Trabajo forzado</td></tr>
+                </tbody></table>
+                <p><strong>Respuesta:</strong> Encomienda → Trabajo forzado; Resguardo → Tierras controladas.</p>
+
+                <p><strong>13. Selección múltiple:</strong> Los Cabildos decidían sobre los pueblos, como las alcaldías hoy. ¿Qué institución es similar? (Unidad 1)</p>
+                <label><input type="radio" name="q13"> a) Alcaldías</label>
+                <label><input type="radio" name="q13"> b) Ministerio de Hacienda</label>
+                <label><input type="radio" name="q13"> c) Real Audiencia</label>
+                <label><input type="radio" name="q13"> d) Virreinato</label>
+                <p><strong>Respuesta:</strong> a) Alcaldías</p>
+
+                <p><strong>14. Selección múltiple:</strong> El resguardo daba tierras a los indígenas, pero con control español. ¿Qué era el resguardo? (Unidad 2)</p>
+                <label><input type="radio" name="q14"> a) Trabajo forzado</label>
+                <label><input type="radio" name="q14"> b) Tierras controladas</label>
+                <label><input type="radio" name="q14"> c) Comercio</label>
+                <label><input type="radio" name="q14"> d) Escuela</label>
+                <p><strong>Respuesta:</strong> b) Tierras controladas</p>
+
+                <p><strong>15. Selección múltiple:</strong> Los mestizos tenían menos derechos que los criollos. ¿Cuál era su posición? (Unidad 3)</p>
+                <label><input type="radio" name="q15"> a) Los más poderosos</label>
+                <label><input type="radio" name="q15"> b) Menos derechos</label>
+                <label><input type="radio" name="q15"> c) Líderes políticos</label>
+                <label><input type="radio" name="q15"> d) Esclavos</label>
+                <p><strong>Respuesta:</strong> b) Menos derechos</p>
+
+                <p><strong>16. Selección múltiple:</strong> La evangelización buscaba convertir a los indígenas al cristianismo. ¿Cuál era su objetivo? (Unidad 4)</p>
+                <label><input type="radio" name="q16"> a) Proteger a los indígenas</label>
+                <label><input type="radio" name="q16"> b) Propagar el cristianismo</label>
+                <label><input type="radio" name="q16"> c) Enseñar agricultura</label>
+                <label><input type="radio" name="q16"> d) Liberar esclavos</label>
+                <p><strong>Respuesta:</strong> b) Propagar el cristianismo</p>
+
+                <p><strong>17. Verdadero/Falso:</strong> La Casa de Contratación controlaba el comercio. (Verdadero) (Unidad 1)</p>
+                <p><strong>18. Verdadero/Falso:</strong> La mita permitía a los indígenas elegir su trabajo. (Falso) (Unidad 2)</p>
+                <p><strong>19. Arrastrar y soltar:</strong> Arrastra el concepto a su descripción. (Unidad 4)</p>
+                <ul>
+                    <li>Evangelización → Convertir al cristianismo</li>
+                    <li>Inquisición → Castigar herejías</li>
+                </ul>
+
+                <p><strong>20. Relacionar columnas:</strong> Une el grupo social con su rol. (Unidad 3)</p>
+                <table>
+                    <tbody><tr><td>Españoles</td><td>Trabajo forzado</td></tr>
+                    <tr><td>Esclavos</td><td>Máximo poder</td></tr>
+                </tbody></table>
+                <p><strong>Respuesta:</strong> Españoles → Máximo poder; Esclavos → Trabajo forzado.</p>
+            </div>
+        </section>
+
+        <!-- Unidad 6: Recuperación -->
+        <section id="unidad6">
+            <h2>🔄 Unidad 6: Recuperación y Resumen</h2>
+            <h3>Introducción</h3>
+            <p>¡Llegaste al final del viaje por la Nueva Granada! En esta unidad, repasarás lo más importante y crearás un resumen creativo para no olvidar nada.</p>
+
+            <h3>Objetivos de Aprendizaje</h3>
+            <ul>
+                <li>✏️ Repasar las organizaciones, el trabajo, los grupos sociales y la religión.</li>
+                <li>✅ Crear un resumen creativo.</li>
+                <li>💡 Reflexionar sobre el impacto del periodo colonial.</li>
+            </ul>
+
+            <h3>Desarrollo</h3>
+            <p>Repasemos lo principal:</p>
+            <ul>
+                <li><strong>Unidad 1:</strong> Las organizaciones como el Consejo Supremo de Indias y los Cabildos gobernaban la Colonia, similares a los ministerios y alcaldías de hoy.</li>
+                <li><strong>Unidad 2:</strong> La encomienda, mita y resguardo eran sistemas de trabajo injustos. Hoy, las leyes protegen a los trabajadores.</li>
+                <li><strong>Unidad 3:</strong> Los españoles, criollos, mestizos, indígenas y esclavos formaban una sociedad desigual, que aún influye en Colombia.</li>
+                <li><strong>Unidad 4:</strong> La religión católica controlaba la vida diaria, afectando a indígenas y afrodescendientes. Las fiestas coloniales se parecen a las de hoy.</li>
+            </ul>
+            <div class="highlight-box">
+                💡 <strong>Para tu cuaderno:</strong><br>
+                - Organizaciones: Gobernaban la Colonia.<br>
+                - Trabajo: Injusto, forzado.<br>
+                - Grupos sociales: Desigualdad.<br>
+                - Religión: Controlaba y evangelizaba.
+            </div>
+            <img src="https://via.placeholder.com/400x200?text=Nueva+Granada" alt="Resumen Nueva Granada">
+            <p>📺 <strong>Video educativo:</strong> Mira este video para repasar: <a href="https://www.youtube.com/watch?v=example" target="_blank">Resumen de la Colonia (5 min)</a>.</p>
+
+            <h3>Tarea</h3>
+            <p>📢 Crea un cómic de 4 viñetas que resuma una unidad (tú eliges). Cada viñeta debe mostrar un aspecto clave (ej. una organización, un grupo social).</p>
+            <p><strong>Criterios de éxito:</strong></p>
+            <ul>
+                <li>✅ El cómic tiene 4 viñetas claras.</li>
+                <li>✅ Resume una unidad correctamente.</li>
+                <li>✅ Es colorido y creativo.</li>
+            </ul>
+
+            <h3>Proceso</h3>
+            <ol>
+                <li>👥 En grupos de 3, elige una unidad.</li>
+                <li>✏️ Repasa los conceptos clave en los recursos.</li>
+                <li>🎨 Dibuja el cómic en una hoja, con 4 viñetas.</li>
+                <li>✅ Comparte tu cómic con el grupo y explica tu resumen.</li>
+            </ol>
+
+            <h3>Recursos</h3>
+            <ul>
+                <li><a href="https://www.banrepcultural.org/" target="_blank">Banco de la República (2023): Resumen colonial</a></li>
+                <li><a href="https://www.youtube.com/watch?v=example" target="_blank">Video: Resumen de la Colonia (2022)</a></li>
+                <li><a href="https://www.colombiaaprende.edu.co/" target="_blank">Colombia Aprende (2021): Nueva Granada</a></li>
+                <li><a href="https://www.mincultura.gov.co/" target="_blank">Ministerio de Cultura (2024): Historia colonial</a></li>
+            </ul>
+
+            <h3>Rúbrica de Evaluación</h3>
+            <table>
+                <tbody><tr><th>Criterio</th><th>Superior (4)</th><th>Alto (3)</th><th>Básico (2)</th><th>Bajo (1)</th></tr>
+                <tr><td>Contextualización</td><td>Resume la unidad con ejemplos claros.</td><td>Resume con pocos ejemplos.</td><td>Menciona la unidad sin ejemplos.</td><td>No resume la unidad.</td></tr>
+                <tr><td>Precisión histórica</td><td>Resume correctamente los conceptos.</td><td>Resume con pequeños errores.</td><td>Resume con errores importantes.</td><td>No resume correctamente.</td></tr>
+                <tr><td>Colaboración</td><td>Trabaja en equipo y aporta ideas.</td><td>Trabaja con poca participación.</td><td>Participa poco.</td><td>No colabora.</td></tr>
+                <tr><td>Diseño visual</td><td>Cómic claro, colorido y creativo.</td><td>Cómic claro pero con errores.</td><td>Cómic desorganizado.</td><td>Cómic incompleto.</td></tr>
+                <tr><td>Citación APA</td><td>Cita todas las fuentes correctamente.</td><td>Cita algunas fuentes correctamente.</td><td>Cita con errores.</td><td>No cita fuentes.</td></tr>
+            </tbody></table>
+        </section>
+    </div>
+
+</body></html>
